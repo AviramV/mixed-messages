@@ -25,10 +25,12 @@ const nouns = ['dork', 'car', 'computer', 'chair', 'picture', 'phone', 'window']
 // Create a list of prepositional phrases
 const prepositions = ['in the house', 'at the store', 'on the wall', 'down the street', 'by the beach', 'on your head', 'around the corner', 'in the sky'];
 
+// Helper function to return random parts for the message
 const randomizer = (messagePart) => {
     const num = Math.floor(Math.random() * messagePart.length);
     return messagePart[num]
 }
+
 function outputRandomMessage() {
 // Randomize every message part
     const randomSubject = randomizer(subjects);
@@ -45,7 +47,7 @@ function outputRandomMessage() {
     } else {
         randomVerb = randomizer(verbs.i);
     }
-
+// Adjectives starting with a vowel get "an" in front of them. All others get "a" or "the"
     if (randomAdjective[0] === 'i' || randomAdjective[0] === 'a' || randomAdjective[0] === 'o' || randomAdjective[0] === 'u' || randomAdjective[0] === 'e') {
         randomArticle = articles[2];
     } else {
@@ -53,7 +55,6 @@ function outputRandomMessage() {
     }
     
     return `${randomSubject} ${randomVerb} ${randomArticle} ${randomAdjective} ${randomNoun} ${randomPreposition}`
-   //console.log(randomSubject);
-   //console.log(randomVerb)
+   
 } 
 console.log(outputRandomMessage());
