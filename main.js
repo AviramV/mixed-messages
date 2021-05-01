@@ -14,7 +14,7 @@ const verbs = {
 };
 
 // Create a list of articles
-const articles = ['a', 'an', 'the']
+const articles = ['a', 'the', 'an']
 
 // Create a list of adjectives
 const adjectives = ['big', 'small', 'tall', 'short', 'interesting', 'boring', 'stupid'];
@@ -30,11 +30,14 @@ const randomizer = (messagePart) => {
     return messagePart[num]
 }
 function outputRandomMessage() {
+// Randomize every message part
     const randomSubject = randomizer(subjects);
     let randomVerb = '';
+    let randomArticle = '';
     const randomAdjective = randomizer(adjectives);
     const randomNoun = randomizer(nouns);
     const randomPreposition = randomizer(prepositions);
+// Set correct verb to match subject
     if (randomSubject === 'He' || randomSubject === 'She' || randomSubject === 'It') {
         randomVerb = randomizer(verbs.he_She_It);
     } else if (randomSubject === 'You' || randomSubject === 'We' || randomSubject === 'They') {
@@ -42,8 +45,15 @@ function outputRandomMessage() {
     } else {
         randomVerb = randomizer(verbs.i);
     }
+
+    if (randomAdjective[0] === 'i' || randomAdjective[0] === 'a' || randomAdjective[0] === 'o' || randomAdjective[0] === 'u' || randomAdjective[0] === 'e') {
+        randomArticle = articles[2];
+    } else {
+        randomArticle = articles[Math.floor(Math.random() * 2 )]
+    }
     
+    return `${randomSubject} ${randomVerb} ${randomArticle} ${randomAdjective} ${randomNoun} ${randomPreposition}`
    //console.log(randomSubject);
    //console.log(randomVerb)
 } 
-outputRandomMessage();
+console.log(outputRandomMessage());
