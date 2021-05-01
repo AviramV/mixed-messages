@@ -8,9 +8,9 @@ const subjects = ['I', 'You', 'He', 'She', 'It', 'We', 'They'];
 
 // Create a list of verbs
 const verbs = {
-    i: ['am', 'believe', 'hope', 'want', 'think'],
-    you_we_they: ['are', 'believe', 'hope', 'want', 'think'],
-    he_She_It: ['is', 'believes', 'hopes', 'wants', 'thinks'],
+    i: ['am', 'believe there\'s', 'hope you have', 'want', 'think about', 'should drill', 'can\'t stop'],
+    you_we_they: ['are', 'believe', 'hope to get', 'want', 'think it is', 'can\'t stop', 'better not forget'],
+    he_She_It: ['is', 'believes', 'hopes', 'wants', 'turns out to be', 'really doesn\'t care about', 'called', 'asked for'],
 };
 
 // Create a list of articles
